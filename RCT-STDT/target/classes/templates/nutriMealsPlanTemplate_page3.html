@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{corelayout}">
+<head>
+
+<title>Meals Plan Template</title>
+
+</head>
+<body class="hold-transition  sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
+
+	<div layout:fragment="content">
+	
+			<!-- Content Header (Page header) -->
+		<div class="content-header">
+			<div class="container-fluid">
+				<div class="row mb-2">
+					<div class="col-sm-6">
+						<h1 class="m-0">Meals Plan Template</h1>
+						
+					</div>
+					<!-- /.col -->
+					<div class="col-sm-6">
+						<ol class="breadcrumb float-sm-right">
+							<li class="breadcrumb-item"><a href="#">Nutritionists</a></li>
+							<li class="breadcrumb-item active"><a href="./nutriMealsPlanTemplate">Meals Plan Template</a></li>
+						</ol>
+					</div>
+					<!-- /.col -->
+				</div>
+				<!-- /.row -->
+			</div>
+			<!-- /.container-fluid -->
+		</div>
+		<!-- /.content-header -->
+		
+ <!-- ------------------------------------------- DAILY PATTERN DATA TABLE START --------------------------------------------------- -->	
+    
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+
+            <div class="card">
+             <div class="card-header">
+                <h3 class="card-title">
+					Daily Pattern:&nbsp;&nbsp;
+					<button type="button" class="btn btn-primary">Edit</button>&nbsp;&nbsp;
+					<button type="button" class="btn btn-primary">Save</button>&nbsp;&nbsp;
+					<button type="button" class="btn btn-primary">Add Row</button>&nbsp;&nbsp;
+					<button type="button" class="btn btn-default" >Reset</button>&nbsp;&nbsp;				
+				</h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <table id="example1" class="table table-bordered table">
+                  <thead class="thead-custom">
+                  <tr>
+                    <th>Daily Pattern</th>
+                    <th>Time</th>
+                    <th>Energy(Kcal)</th>
+                    <th>Fat(g)</th>
+                    <th>Protein(g)</th>
+                    <th>Carbohydrates(g)</th>
+                    <th>Fiber(g)</th>
+                    <th>Sodium(Mg)</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+					 <!-- <tr th:each="f:${nadtemplateList}">
+						 	<td></td>
+						 	<td></td>
+						 	<td></td>
+						 	<td></td>
+						 	<td></td>
+						 	<td></td>
+						 	<td></td>
+						 	<td></td>
+				   </tr> -->
+                  </tbody>
+                  
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.container-fluid -->
+    </section>
+ <!--------------------------------------------- DAILY PATTERN DATA TABLE END ----------------------------------------------------->	
+
+
+ <!-- ------------------------------------------- FOOD PATTERN DATA TABLE START --------------------------------------------------- -->	
+    
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+
+            <div class="card">
+             <div class="card-header">
+                <h3 class="card-title">
+					
+					Food Pattern:&nbsp;&nbsp;
+					<button type="button" class="btn btn-primary">Edit</button>&nbsp;&nbsp;
+					<button type="button" class="btn btn-primary">Save</button>&nbsp;&nbsp;
+					<button type="button" class="btn btn-primary">Add Row</button>&nbsp;&nbsp;
+					<button type="button" class="btn btn-default" >Reset</button>&nbsp;&nbsp;
+						 
+				</h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <table id="example11" class="table table-bordered table">
+                  <thead class="thead-custom">
+                  <tr>
+                    <th>Food Id</th>
+                    <th>Food Name</th>
+                    <th></th>
+                    <th>Energy(Kcal)</th>
+                    <th>Fat(g)</th>
+                    <th>Protein(g)</th>
+                    <th>Carbohydrates(g)</th>
+                    <th>Fiber(g)</th>
+                    <th>Sodium(Mg)</th>
+                    <th>Portion Details</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+					 <!-- <tr th:each="f:${nadtemplateList}">
+						 	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+						  	<td></td>
+				   </tr> -->
+                  </tbody>
+                  
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.container-fluid -->
+    </section>
+  <!--------------------------------------------- DAILY SCHEDULE DATA TABLE END ----------------------------------------------------->	
+	
+<!-- ------------------------------------ CREATE MEAL PLAN TEMPLATE MODAL START ------------------------------------------------------- -->
+		
+		<div class="modal fade" id="createModal">
+        <div class="modal-dialog modal-xl">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Create Meals Template</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <form th:action="@{/nutriMealsPlanTemplate/addNew}" method="post">
+		            <div class="modal-body">
+		               <div class="row">
+			                      
+			                    <div class="col-sm-6">
+			                    	<div class="form-group">
+				                        <label>Favourite Template Name:</label>
+				                        <input type="text" class="form-control"  required>
+				                      </div>
+			                	</div>
+			                	<div class="col-sm-6">
+			                		<div class="form-group">
+				                        <label>Category:</label>
+				                        <select class="form-control" required>
+				        	       			<option>-- Select Status --</option>			    					  					    					    
+						          			<option value="Y" selected>Active</option>
+		 						 			 <option value="N">Inactive</option>
+		 					    			</select>	
+				                      </div>
+			                	</div>            	
+			                </div>
+			                
+			                <div class="row">
+			                      
+			                    <div class="col-sm-4">
+			                    	<div class="form-group">
+				                        <label>To Publish:</label>
+				                        <select class="form-control" required>
+				        	       			<option>-- Select Status --</option>			    					  					    					    
+						          			<option value="Y" selected>Enable</option>
+		 						 			 <option value="N">disable</option>
+		 					    			</select>	
+				                      </div>
+			                	</div>
+			                	<div class="col-sm-4">
+			                		<div class="form-group">
+				                        <label>Number of Days:</label>
+				                        <input type="text" class="form-control"  required>
+				                      </div>
+			                	</div>   
+			                	 <div class="col-sm-4">
+			                		<div class="form-group">
+				                        <label>To be Available:</label>
+				                        <select class="form-control" required>
+				        	       			<option>-- Select Status --</option>			    					  					    					    
+						          			<option value="Y" selected>Enable</option>
+		 						 			 <option value="N">disable</option>
+		 					    			</select>
+				                      </div>
+			                	</div>  
+			                	        	
+			                </div>
+			                
+			              <div class="row">
+			                      
+			                    <div class="col-sm-4">
+			                    	<div class="form-group">
+				                        <label>Energy:</label>
+				                        <input type="text" class="form-control"  required>
+				                      </div>
+			                	</div>
+			                	<div class="col-sm-4">
+			                		<div class="form-group">
+				                        <label>Fat(g):</label>
+				                        <input type="text" class="form-control"  required>
+				                      </div>
+			                	</div>   
+			                	 <div class="col-sm-4">
+			                		<div class="form-group">
+				                        <label>Protein:</label>
+				                         <input type="text" class="form-control"  required>
+				                      </div>
+			                	</div>  
+			                	        	
+			                </div>
+			             
+			              <div class="row">
+			                      
+			                    <div class="col-sm-4">
+			                    	<div class="form-group">
+				                        <label>Carbohydrates(g):</label>
+				                        <input type="text" class="form-control"  required>
+				                      </div>
+			                	</div>
+			                	<div class="col-sm-4">
+			                		<div class="form-group">
+				                        <label>Fibre(g):</label>
+				                        <input type="text" class="form-control"  required>
+				                      </div>
+			                	</div>   
+			                	 <div class="col-sm-4">
+			                		<div class="form-group">
+				                        <label>Sodium(g):</label>
+				                         <input type="text" class="form-control"  required>
+				                      </div>
+			                	</div>  
+			                	        	
+			                </div>   
+			              
+			              <div class="row">
+			                      
+			                    <div class="col-sm-6">
+			                    	<div class="form-group">
+				                        <label>Objectives:</label>
+				                         <textarea class="form-control" id="" placeholder="" rows="3"></textarea> 
+				                      </div>
+			                	</div>
+			                	<div class="col-sm-6">
+			                		<div class="form-group">
+				                        <label>How to achieve:</label>
+				                         <textarea class="form-control" id="" placeholder="" rows="3"></textarea> 
+				                      </div>
+			                	</div>                  	        	
+			              </div>   
+			                                
+		            </div>
+		            <div class="modal-footer">
+		              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		              <button type="button" class="btn btn-primary" data-dismiss="modal">One Page Meal Plan</button>
+		              <button type="submit" class="btn btn-primary">Create</button>
+		            </div>
+          </form>
+            
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+      <!-- /.modal -->
+		
+		<!-- --------------------------------- CREATE MEAL PLAN TEMPLATE MODAL END -------------------------------------------------- -->
+		
+		
+	<!-- --------------------------------- EDIT MEAL PLAN TEMPLATE MODAL START -------------------------------------------------- -->
+		
+		<div class="modal fade" id="editModal">
+        <div class="modal-dialog modal-xl">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Edit Meals Template</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <form th:action="@{/nutriMealsPlanTemplate/findById}" method="put">
+		            <div class="modal-body">
+		               <div class="row">
+			                      
+			                    <div class="col-sm-6">
+			                    	<div class="form-group">
+				                        <label>Favourite Template Name:</label>
+				                        <input type="text" class="form-control"  required>
+				                      </div>
+			                	</div>
+			                	<div class="col-sm-6">
+			                		<div class="form-group">
+				                        <label>Category:</label>
+				                        <select class="form-control" required>
+				        	       			<option>-- Select Status --</option>			    					  					    					    
+						          			<option value="Y" selected>Active</option>
+		 						 			 <option value="N">Inactive</option>
+		 					    			</select>	
+				                      </div>
+			                	</div>            	
+			                </div>
+			                
+			                <div class="row">
+			                      
+			                    <div class="col-sm-4">
+			                    	<div class="form-group">
+				                        <label>To Publish:</label>
+				                        <select class="form-control" required>
+				        	       			<option>-- Select Status --</option>			    					  					    					    
+						          			<option value="Y" selected>Enable</option>
+		 						 			 <option value="N">disable</option>
+		 					    			</select>	
+				                      </div>
+			                	</div>
+			                	<div class="col-sm-4">
+			                		<div class="form-group">
+				                        <label>Number of Days:</label>
+				                        <input type="text" class="form-control"  required>
+				                      </div>
+			                	</div>   
+			                	 <div class="col-sm-4">
+			                		<div class="form-group">
+				                        <label>To be Available:</label>
+				                        <select class="form-control" required>
+				        	       			<option>-- Select Status --</option>			    					  					    					    
+						          			<option value="Y" selected>Enable</option>
+		 						 			 <option value="N">disable</option>
+		 					    			</select>
+				                      </div>
+			                	</div>  
+			                	        	
+			                </div>
+			                
+			              <div class="row">
+			                      
+			                    <div class="col-sm-4">
+			                    	<div class="form-group">
+				                        <label>Energy:</label>
+				                        <input type="text" class="form-control"  required>
+				                      </div>
+			                	</div>
+			                	<div class="col-sm-4">
+			                		<div class="form-group">
+				                        <label>Fat(g):</label>
+				                        <input type="text" class="form-control"  required>
+				                      </div>
+			                	</div>   
+			                	 <div class="col-sm-4">
+			                		<div class="form-group">
+				                        <label>Protein:</label>
+				                         <input type="text" class="form-control"  required>
+				                      </div>
+			                	</div>  
+			                	        	
+			                </div>
+			             
+			              <div class="row">
+			                      
+			                    <div class="col-sm-4">
+			                    	<div class="form-group">
+				                        <label>Carbohydrates(g):</label>
+				                        <input type="text" class="form-control"  required>
+				                      </div>
+			                	</div>
+			                	<div class="col-sm-4">
+			                		<div class="form-group">
+				                        <label>Fibre(g):</label>
+				                        <input type="text" class="form-control"  required>
+				                      </div>
+			                	</div>   
+			                	 <div class="col-sm-4">
+			                		<div class="form-group">
+				                        <label>Sodium(g):</label>
+				                         <input type="text" class="form-control"  required>
+				                      </div>
+			                	</div>  
+			                	        	
+			                </div>   
+			              
+			              <div class="row">
+			                      
+			                    <div class="col-sm-6">
+			                    	<div class="form-group">
+				                        <label>Objectives:</label>
+				                         <textarea class="form-control" id="" placeholder="" rows="3"></textarea> 
+				                      </div>
+			                	</div>
+			                	<div class="col-sm-6">
+			                		<div class="form-group">
+				                        <label>How to achieve:</label>
+				                         <textarea class="form-control" id="" placeholder="" rows="3"></textarea> 
+				                      </div>
+			                	</div>                  	        	
+			              </div>   
+			                                
+		            </div>
+		            <div class="modal-footer">
+					              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					              <button type="button" class="btn btn-danger">Delete</button>
+					              <button type="button" class="btn btn-primary">Clone Meal Plan</button>
+ 					              <button type="button" class="btn btn-primary">Print Meal Plan&nbsp;&nbsp;<i class="nav-icon fa fa-print"></i></button>
+					              <button type="button" class="btn btn-primary">One Page Meal Plan&nbsp;&nbsp;<i class="nav-icon fa fa-pie-chart"></i></button>
+					              <button type="submit" class="btn btn-primary">Apply changes</button>
+		            </div>
+          </form>
+            
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+      <!-- /.modal -->
+		
+		<!-- --------------------------------- EDIT MEAL PLAN TEMPLATE MODAL END -------------------------------------------------- -->	
+		
+		
+	</div>
+</body>
+<th:block layout:fragment="script">
+	
+
+	<script src="./admin/custom/nadjs/nutriMealsPlanTemplatePage3.js"></script>
+	<!--<div th:replace="individual/nutriMealsPlanTemplate_page2_js"></div>-->
+
+
+</th:block>
+</html>

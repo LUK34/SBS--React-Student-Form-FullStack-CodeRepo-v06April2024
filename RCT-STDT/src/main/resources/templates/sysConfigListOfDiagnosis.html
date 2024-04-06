@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{corelayout}">
+<head>
+<title>List of Diagnosis</title>
+</head>
+<body class="hold-transition  sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
+
+	<div layout:fragment="content">
+	
+			<!-- Content Header (Page header) -->
+		<div class="content-header">
+			<div class="container-fluid">
+				<div class="row mb-2">
+					<div class="col-sm-6">
+						<h1 class="m-0">List of Diagnosis</h1>
+						
+					</div>
+					<!-- /.col -->
+					<div class="col-sm-6">
+						<ol class="breadcrumb float-sm-right">
+							<li class="breadcrumb-item"><a href="#">System Configuration</a></li>
+							<li class="breadcrumb-item active"><a href="./sysConfigListOfDiagnosis">List of Diagnosis</a></li>
+						</ol>
+					</div>
+					<!-- /.col -->
+				</div>
+				<!-- /.row -->
+			</div>
+			<!-- /.container-fluid -->
+		</div>
+		<!-- /.content-header -->
+		
+		 <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+
+            <div class="card">
+             <div class="card-header">
+                <h3 class="card-title">List of Diagnosis: &nbsp; &nbsp;
+					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createListOfDiagnosisModal" >Create</button>
+				</h3>
+              </div>
+              
+              <div class="card-body">
+                <table id="example1" class="table table-bordered table">
+                 <thead class="thead-custom">
+                  <tr>
+					<th>#</th>
+                    <th>Diagnosis</th>
+                    <th>Diagnosis(Ar)</th>
+                    <th>Status</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+					 <tr th:each="f:${nadTrmtDiagList}">
+						  <td><a th:href="@{/sysConfigListOfDiagnosis/findById/(id=${f.id})}" class="btn btn-primary editButton"> <i class="nav-icon fa fa-search"></i> </a></td>
+						  <td th:text="${f.diag}"></td>
+						  <td th:text="${f.diaga}"></td>
+						  <td th:text="${f.stat}"></td>
+					 </tr>
+                  </tbody>
+                  
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.container-fluid -->
+    </section>
+    
+	<!-- --------------------------------------------- CREATE NAD LIST OF DIAGNOSIS RECORD MODAL VIEW START ---------------------------------------------  -->
+ 	
+		<th:block th:replace="nadmodals/createListOfDiagnosisModal :: createListOfDiagnosisModal"></th:block>
+      
+	<!-- --------------------------------------------- CREATE NAD LIST OF DIAGNOSIS RECORD MODAL VIEW END ---------------------------------------------  -->
+ 		
+	<!-- --------------------------------------------- EDIT/UPDATE NAD LIST OF DIAGNOSIS RECORD MODAL VIEW START ---------------------------------------------  -->
+ 
+ 		<th:block th:replace="nadmodals/editListOfDiagnosisModal :: editListOfDiagnosisModal"></th:block>
+ 		
+ 	<!-- --------------------------------------------- EDIT/UPDATE NAD LIST OF DIAGNOSIS RECORD MODAL VIEW END  ---------------------------------------------  -->
+ 	
+ 	
+ 	<!-- --------------------------------------------- DELETE NAD RECORD MODAL VIEW START  ---------------------------------------------  -->
+ 		
+ 		<th:block th:replace="nadmodals/deleteModal :: deleteModal"></th:block>
+ 	
+ 	<!-- --------------------------------------------- DELETE NAD RECORD MODAL VIEW END  ---------------------------------------------  -->
+ 	
+		
+		
+	</div>
+</body>
+<th:block layout:fragment="script">
+		
+		
+	<script src="./admin/custom/nadjs/sysConfigListOfDiagnosis.js"></script>
+		
+
+</th:block>
+</html>
+
+
+
+
+

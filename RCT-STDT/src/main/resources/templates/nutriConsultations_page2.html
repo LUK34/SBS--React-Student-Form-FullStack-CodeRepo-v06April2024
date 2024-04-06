@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{corelayout}">
+<head>
+<title>Patient Profile</title>
+</head>
+<body class="hold-transition  sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
+
+	<div layout:fragment="content">
+	
+			<!-- Content Header (Page header) -->
+		<div class="content-header">
+			<div class="container-fluid">
+				<div class="row mb-2">
+					<div class="col-sm-6">
+						<h1 class="m-0">Consultations</h1>
+						
+					</div>
+					<!-- /.col -->
+					<div class="col-sm-6">
+						<ol class="breadcrumb float-sm-right">
+							<li class="breadcrumb-item"><a href="#">Nutritionists</a></li>
+							<li class="breadcrumb-item active"><a href="./nutriConsultations_page1">Consultations</a></li>
+						</ol>
+					</div>
+					<!-- /.col -->
+				</div>
+				<!-- /.row -->
+			</div>
+			<!-- /.container-fluid -->
+		</div>
+		<!-- /.content-header -->
+		
+		
+		 <!-- Main content -->
+    <section class="content">	
+	<div class="row">
+		<div class="col-12">
+            <div class="card">
+            
+              <div class="card-header">
+            		<h5><b>Patient Profile:&nbsp;&nbsp;</b>
+            		<a class="btn btn-primary" href="./nutriConsultations_page1">Back</a>&nbsp;&nbsp;
+             		<a type="button" class="btn btn-primary">Treatment Complete</a>&nbsp;&nbsp;
+              		</h5>
+              </div>
+            
+               <div class="card-body">
+               	    <div class="row">
+		                    <div class="col-sm-6">
+		                    	 <div class="form-group">
+		                    	 	<label>Military Id:&nbsp;&nbsp;
+		                    	 	</label>
+		                    	 </div>
+		                    	 <div class="form-group">
+		                    	 	<label>Name(En):&nbsp;&nbsp;
+		                    	 	</label>
+		                    	 </div>
+		                    	  <div class="form-group">
+		                    	 	<label>Date of Birth:&nbsp;&nbsp;
+		                    	 	</label>
+		                    	 </div>
+		                    </div>
+		                    
+		                    <div class="col-sm-6">
+		                    	 <div class="form-group">
+		                    	 	<label>Civil Id:&nbsp;&nbsp;
+		                    	 	</label>
+		                    	 </div>
+		                    	 <div class="form-group">
+		                    	 	<label>Name(Ar):&nbsp;&nbsp;
+		                    	 	</label>
+		                    	 </div>
+		                    	 <div class="form-group">
+		                    	 	<label>Patient Age:&nbsp;&nbsp;
+		                    	 	</label>
+		                    	 </div>
+		                    </div>
+	                 </div>
+	            </div> 
+	        </div> 
+	     </div>   
+     </div>
+	</section> 
+	
+	<section class="content">
+		
+		<div class="row">
+			<div class="col-12">
+				<div class="card">
+					<div class="card-header">
+						<ul class="nav nav-pills">
+							<li class="nav-item"><a class="nav-link active"  href="#information" data-toggle="tab" >1.Information</a></li>
+                  			<li class="nav-item"><a class="nav-link"  href="#measurements" data-toggle="tab">2.Measurements</a></li>
+                  			<li class="nav-item"><a class="nav-link"  href="#treatment" data-toggle="tab">3.Treatment</a></li>
+                  			<li class="nav-item"><a class="nav-link"  href="#analysis" data-toggle="tab">4.Analysis</a></li>
+                  			<li class="nav-item"><a class="nav-link"  href="#deliverables" data-toggle="tab">5.Deliverables</a></li>  
+						</ul>
+					</div>
+					</div>
+				</div>
+			</div>		
+			
+			<div class="tab-content">
+					<!-- -------------------------------------------------- INFORMATION TAB START ------------------------------------------------- -->
+	                  <div class="active tab-pane" id="information">
+					  		<th:block th:replace="tabs/informationTab"></th:block>
+					  </div>
+					<!-- -------------------------------------------------- INFORMATION TAB END ------------------------------------------------- -->
+					
+					<!-- -------------------------------------------------- MEASUREMENTS TAB START ------------------------------------------------- -->
+					  <div class="tab-pane" id="measurements">
+					  		<th:block th:replace="tabs/measurementsTab"></th:block>
+					  </div>
+					<!-- -------------------------------------------------- MEASUREMENTS TAB END ------------------------------------------------- -->
+					
+					<!-- -------------------------------------------------- TREATMENT TAB START ------------------------------------------------- -->
+					  <div class="tab-pane" id="treatment">
+					  		<th:block th:replace="tabs/treatmentTab"></th:block>
+					  </div>
+					<!-- -------------------------------------------------- TREATMENT TAB END ------------------------------------------------- -->
+					
+					<!-- -------------------------------------------------- ANALYSIS TAB START ------------------------------------------------- -->
+					  <div class="tab-pane" id="analysis">
+					  		<th:block th:replace="tabs/analysisTab"></th:block>
+					  </div>
+					<!-- -------------------------------------------------- ANALYSIS TAB END ------------------------------------------------- -->
+					  
+					<!-- -------------------------------------------------- DELIVERABLES TAB START ------------------------------------------------- -->
+					  <div class="tab-pane" id="deliverables">
+					  		<th:block th:replace="tabs/deliverablesTab"></th:block>
+					  </div>
+					<!-- -------------------------------------------------- DELIVERABLES TAB END ------------------------------------------------- -->
+	
+			</div>
+			
+					
+				
+	</section>
+		
+		
+		
+	</div>
+</body>
+
+
+<th:block layout:fragment="script">
+	
+	
+		
+		<script src="./admin/custom/nadjs/nutriConsultationsPage2.js"></script>
+		<script src="./admin/custom/nadjs/measurement.js"></script>
+		<script src="./admin/custom/nadjs/treatment.js"></script>
+		
+		
+</th:block>
+</html>
+
+
+
+
+
+

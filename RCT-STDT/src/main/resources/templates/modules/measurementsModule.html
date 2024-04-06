@@ -1,0 +1,96 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<!------------------------------------------------------------- MEASUREMENTS DATA TABLE START ----------------------------------------------------------- -->
+
+<div th:fragment="measurementsModule">
+
+
+
+
+<section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+
+            <div class="card">
+             <div class="card-header">
+                <h3 class="card-title">Measurement Record</h3>
+              </div>
+          
+              <!-- /.card-header -->
+              <div class="card-body">
+                <table id="nadPatientMeasurementsTable" class="table table-bordered table">
+                  <thead class="thead-custom">
+                  <tr>
+                    <th>Records ID</th>
+                    <th>Visit Date</th>
+                    <th>Height</th>
+                    <th>Chest</th>
+                    <th>Weight</th>
+                    <th>Waist</th>
+                    <th>BMI</th>
+                    <th>BF</th>
+                    <th>BMR</th>
+                    <th>IW</th>
+                    <th>TEN</th>
+                    <th>PEX</th>
+                  </tr>
+                  </thead>
+                  <tbody id="patientMeasurementsContainer">
+				
+                  </tbody>
+                  
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.container-fluid -->
+    </section>
+    
+    
+    
+</div>    
+<!------------------------------------------------------------- MEASUREMENTS DATA TABLE END ----------------------------------------------------------- -->
+
+
+<!-- ----------------------------------------------------------- MEASUREMENTS RECORD by PID START ----------------------------------------------------------- -->
+
+
+<div th:fragment="measurementRecordByPid">
+
+	<tr th:each="f:${nadPatMsrList}">  
+						 <td >
+							  <a class="updatePatientMsrButton">
+							  	<i class="fas fa-search"></i>&nbsp;<span th:text="${f.id}"></span>
+							  </a>
+						  </td>
+						  <td th:text="${f.msrDate}"></td>
+						  <td th:text="${f.height}"></td>
+						  <td th:text="${f.chest}"></td>
+						  <td th:text="${f.weight}"></td>
+						  <td th:text="${f.waist}"></td>
+						  <td th:text="${f.bmi}"></td>
+						  <td th:text="${f.bf}"></td>
+						  <td th:text="${f.bmr}"></td>
+						  <td th:text="${f.iw}"></td>
+						  <td th:text="${f.ten}"></td>
+						  <td th:text="${f.pex}"></td>
+	 </tr>
+	 
+</div>	 
+
+<!-- ----------------------------------------------------------- MEASUREMENTS RECORD by PID END ----------------------------------------------------------- -->
+
+ 
+<html>
+	
+	
+	
+	
+	

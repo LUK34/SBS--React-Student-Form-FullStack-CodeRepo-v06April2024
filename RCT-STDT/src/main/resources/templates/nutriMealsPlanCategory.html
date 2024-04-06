@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{corelayout}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meals Plan Category</title>
+</head>
+<body class="hold-transition  sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
+
+	<div layout:fragment="content">
+	
+			<!-- Content Header (Page header) -->
+		<div class="content-header">
+			<div class="container-fluid">
+				<div class="row mb-2">
+					<div class="col-sm-6">
+						<h1 class="m-0">Meals Plan Category</h1>
+						
+					</div>
+					<!-- /.col -->
+					<div class="col-sm-6">
+						<ol class="breadcrumb float-sm-right">
+							<li class="breadcrumb-item"><a href="#">Nutritionists</a></li>
+							<li class="breadcrumb-item active"><a href="./nutriMealsPlanCategory">Meals Plan Category</a></li>
+						</ol>
+					</div>
+					<!-- /.col -->
+				</div>
+				<!-- /.row -->
+			</div>
+			<!-- /.container-fluid -->
+		</div>
+		<!-- /.content-header -->
+		
+		
+				  <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+
+            <div class="card">
+             <div class="card-header">
+                <h3 class="card-title">Meal Plan Category: &nbsp; &nbsp;
+					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createModal" >Create</button>
+				</h3>
+              </div>
+            
+              <div class="card-body">
+                <table id="example1" class="table table-bordered table">
+                  <thead class="thead-custom">
+                  <tr>
+					<th>#</th>
+                    <th>Category(E)</th>
+                    <th>Category(A)</th>
+                    <th>Status</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+					 <tr th:each="f:${nadtrmtdiagList}">
+						  <td><a th:href="@{/nutriMealsPlanCategory/findById/(id=${f.id})}" class="btn btn-primary editButton"> <i class="nav-icon fa fa-search"></i> </a></td>
+						  <td th:text="${f.diag}"></td>
+						  <td th:text="${f.diaga}"></td>
+						  <td th:text="${f.stat}"></td>
+						  
+					 </tr>
+                  </tbody>
+                  
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.container-fluid -->
+    </section>
+		
+	</div>
+</body>
+<th:block layout:fragment="script">
+	<div th:replace="individual/nutriMealsPlanCategory_js"></div>
+	
+</th:block>
+</html>

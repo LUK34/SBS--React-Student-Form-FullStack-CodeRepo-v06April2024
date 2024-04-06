@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{datatablelayout}">
+<head>
+<title>KNG Patient Database</title>
+</head>
+<body class="hold-transition  sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
+
+<div class="content" style="overflow:hidden;">		
+<th:block  layout:fragment="content">
+	
+	
+  			<section class="content">
+			    <div class="container-fluid">		
+					
+					<div class="row">
+						<div class="col-12">
+							
+						<!-- --------------------------------------------- KNG PATIENT DATABASE RECORD MODAL VIEW START ---------------------------------------------  -->					
+			            <div class="card">
+			              <!-- /.card-header -->
+			              <div class="card-body">
+			                <table id="example1" class="table table-bordered table">
+			                 <thead class="thead-custom">
+			                  <tr>
+								<th>Name(E)</th>
+			                    <th>Name(A)</th>
+			                    <th>Military ID</th>
+			                    <th>Rank</th>
+			                    <th>RankId</th>
+			                    <th>Ucode</th>
+			                    <th>Mobile</th>
+			                    <th>Unit</th>
+			                    <th>Nationality</th>
+			                    <th>Mobile</th>
+			                    <th>Unit</th>
+			                    <th>Nationality</th>
+			                    <th>Dob</th>
+			                  </tr>
+			                  </thead>
+			                  <tbody>  
+								<!--<tr th:each="f:${nadpatientList}">  
+									  <td><a th:href="@{/recPageRegistration/findById/(id=${f.id})}" id="editTreatmentButton" data-target="#editTreatmentModal">+Treatment</a></td>
+									  <td th:text="${f.id}"></td>
+									  <td th:text="${f.mid}"></td>
+									  <td th:text="${f.civilid}"></td>
+									  <td th:text="${f.name}"></td>
+									  <td th:text="${f.nameA}"></td>
+									  <td th:text="${f.dob}"></td>
+									  <td th:text="${f.gender}"></td>
+									  <td th:text="${f.rank}"></td>
+									  <td th:text="${f.mobile}"></td>
+									  <td th:text="${f.unit}"></td>
+									  <td th:text="${f.nationality}"></td>
+									  <td th:text="${f.stat}"></td>
+								 </tr>-->
+			                  </tbody>
+			                  
+			                </table>
+			              </div>
+			              <!-- /.card-body -->
+			            </div>
+			            <!-- /.card -->
+			            <!-- --------------------------------------------- KNG PATIENT DATABASE RECORD MODAL VIEW END ---------------------------------------------  -->		
+
+			          </div>
+         			 <!-- /.col -->
+       			 </div>
+       			 <!-- /.row -->
+	  		  </div>
+	      <!-- /.container-fluid -->
+	  	</section>
+	    <!-- /.content -->
+	    
+	    
+  </th:block>  
+</div>
+
+</body>	
+</html>		
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

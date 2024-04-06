@@ -1,0 +1,106 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<!-- --------------------------------------------- EDIT NAD ONE PAGE MEAL PLAN TEMPLATE START ---------------------------------------------  -->
+<div th:fragment="editOnePageMPTModal">
+	
+		
+ 	<div class="modal fade"  id="editOnePageMPTModal" >
+        <div class="modal-dialog modal-lg" style="width:70%">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Edit Meal Planner Single Page Record</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <!-- enter here -->
+              <form th:action="@{/sysConfigOnePageMPT/update}" method="put">
+	              <div class="row">
+	                      
+	                    <div class="col-sm-4">
+	                      <!-- text input -->
+	                      <div class="form-group" hidden>
+	                        <label>Id:</label>
+	                        <input type="number" class="form-control" id="idEdit" readonly>
+	                      </div>
+	                      
+	                      <div class="form-group">
+	                        <label>Template Id:</label>
+	                        <input type="number" class="form-control" id="tidEdit" required>
+	                      </div>
+	                      
+	                    </div>
+	                 	 <div class="col-sm-4">
+		              		  <div class="form-group">
+		                        <label>Days:</label>
+		                        <input type="text" class="form-control" id="daysEdit"  required>
+		                      </div>
+	                	</div>  
+	                	<div class="col-sm-4">
+		              		  <div class="form-group">
+		                        <label>Status:</label>
+		                        <select class="form-control" id="Edit"  required>
+		        	       			<option>-- Select Status --</option>			    					  					    					    
+				          			<option value="Y" selected>Active</option>
+ 						 			 <option value="N">Inactive</option>
+ 					    		</select>	
+		                      </div>
+	                	</div>   
+	              </div>
+	              <div class="row">
+	              		<div class="col-sm-4">
+		              		<div class="form-group">
+		              			<label>Breakfast:</label>
+		              			<textarea class="form-control" id="breakfastEdit"  rows="3"></textarea>
+		              		</div>
+	              		</div>
+	              		
+	              		<div class="col-sm-4">
+	              			<div class="form-group">
+		              			<label>Snack 1:</label>
+		              			<textarea class="form-control" id="snack1Edit"  rows="3"></textarea>
+		              		</div>
+	              		</div>
+	              		
+	              		<div class="col-sm-4">
+	              			<div class="form-group">
+		              			<label>Lunch:</label>
+		              			<textarea class="form-control" id="lunchEdit"  rows="3"></textarea>
+		              		</div>
+	              		</div>
+	              </div>
+	               <div class="row">
+	               		<div class="col-sm-6">
+		              		<div class="form-group">
+		              			<label>Snack 2:</label>
+		              			<textarea class="form-control" id="snack2Edit"  rows="3"></textarea>
+		              		</div>
+	              		</div>
+	              		
+	              		<div class="col-sm-6">
+		              		<div class="form-group">
+		              			<label>Dinner:</label>
+		              			<textarea class="form-control" id="dinnerEdit"  rows="3"></textarea>
+		              		</div>
+	              		</div>
+	               </div>
+	              <div class="modal-footer">
+	               		<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>&nbsp;&nbsp;
+	               		<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal" id="deleteButton">Delete</button>&nbsp;&nbsp;
+			            <button type="submit" class="btn btn-primary">Create</button>    
+			       </div>        
+            </form>
+              </div>           
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+      
+      
+ </div>     
+<!-- --------------------------------------------- EDIT NAD ONE PAGE MEAL PLAN TEMPLATE END ---------------------------------------------  -->
+ 	
+
+</html>

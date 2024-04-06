@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{corelayout}">
+<head>
+<title>Meals Plan Template</title>
+</head>
+<body class="hold-transition  sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
+
+	<div layout:fragment="content">
+	
+			<!-- Content Header (Page header) -->
+		<div class="content-header">
+			<div class="container-fluid">
+				<div class="row mb-2">
+					<div class="col-sm-6">
+						<h1 class="m-0">Meals Plan Template</h1>
+						
+					</div>
+					<!-- /.col -->
+					<div class="col-sm-6">
+						<ol class="breadcrumb float-sm-right">
+							<li class="breadcrumb-item"><a href="#">Nutritionists</a></li>
+							<li class="breadcrumb-item active"><a href="./nutriMealsPlanTemplate_page1">Meals Plan Template</a></li>
+						</ol>
+					</div>
+					<!-- /.col -->
+				</div>
+				<!-- /.row -->
+			</div>
+			<!-- /.container-fluid -->
+		</div>
+		<!-- /.content-header -->
+		
+				  <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+
+            <div class="card">
+             <div class="card-header">
+                <h3 class="card-title">
+					Meal Plan Template: &nbsp; &nbsp;
+					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createMPTModal" >Create Meal Plan Template</button> &nbsp; &nbsp;
+                   	<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Select Meal Plan Category</button>
+					<div class="dropdown-menu">
+					   <a class="dropdown-item" href="#">Action</a>
+					   <a class="dropdown-item" href="#">Another action</a>
+					   <a class="dropdown-item" href="#">Something else here</a>
+					</div>
+                </h3>
+                
+              </div>
+            
+              <div class="card-body">
+                <table id="example1" class="table table-bordered table">
+                  <thead class="thead-custom">
+                  <tr>
+					<th>#</th>
+                    <th>Template Name</th>
+                    <th>Template Code</th>
+                    <th>Course Frequency(Days)</th>
+                    <th>Energy(Kcal)</th>
+                    <th>Fat(g)</th>
+                    <th>Protein(g)</th>
+                    <th>Carbohydrates(g)</th>
+                    <th>Fiber(g)</th>
+                    <th>Sodium(Mg)</th>
+                    <th>Category</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+					 <tr th:each="f:${nadtemplateList}">
+						  <td><a th:href="@{/nutriMealsPlanTemplate_page1/findById/(id=${f.id})}" class="btn btn-primary editButton"> <i class="nav-icon fa fa-search"></i> </a></td>
+						  <!-- <td th:text="${f.tplName}"></td> -->
+						  <td>
+						  	   <!-- <a th:href="@{/nutriMealsPlanTemplate_page2/findByTemplateName/(id=${f.id})}" id="updatePatientButton"> -->
+						  	   <a href="./nutriMealsPlanTemplate_page2">
+	       					   <span th:text="${f.tplName}"></span>
+	       					   </a>
+						  </td>
+						  <td th:text="${f.tplCode}"></td>
+						  <td th:text="${f.tplCrsFre}"></td>
+						  <td th:text="${f.tplTEn}"></td>
+						  <td th:text="${f.tplTFa}"></td>
+						  <td th:text="${f.tplTPr}"></td>
+						  <td th:text="${f.tplTCarb}"></td>
+						  <td th:text="${f.tplTFib}"></td>
+						  <td th:text="${f.tplTSod}"></td>
+						  <td th:text="${f.tplCat}"></td>
+				   </tr>
+                  </tbody>
+                  
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.container-fluid -->
+    </section>
+		
+		
+	<!----------------------------------- CREATE MEAL PLAN TEMPLATE MODAL START ---------------------------------------------------->
+		
+		<th:block th:replace="nadmodals/createMPTModal :: createMPTModal"></th:block>
+		
+	<!----------------------------------- CREATE MEAL PLAN TEMPLATE MODAL END ---------------------------------------------------->
+		
+		
+	<!----------------------------------- EDIT MEAL PLAN TEMPLATE MODAL START ---------------------------------------------------->
+		
+		<th:block th:replace="nadmodals/editMPTModal :: editMPTModal"></th:block>
+		
+	<!----------------------------------- EDIT MEAL PLAN TEMPLATE MODAL END ---------------------------------------------------->	
+		
+		
+	<!-- --------------------------------------------- DELETE NAD RECORD MODAL VIEW START  ---------------------------------------------  -->
+ 		
+ 		<th:block th:replace="nadmodals/deleteModal :: deleteModal"></th:block>
+ 	
+ 	<!-- --------------------------------------------- DELETE NAD RECORD MODAL VIEW END  ---------------------------------------------  -->
+ 		
+		
+	</div>
+</body>
+<th:block layout:fragment="script">
+	
+	<script src="./admin/custom/nadjs/nutriMealsPlanTemplatePage1.js"></script>
+	
+	
+</th:block>
+</html>

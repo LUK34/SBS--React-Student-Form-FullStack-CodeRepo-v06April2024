@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<!--  ---------------------------------------------------- MEASUREMENT TAB START ------------------------------------------------- -->
+<div th:fragment="">
+<div class="row">
+			<div class="col-12">
+			<div class"card">
+				<div class="card-body">
+				       <h5><b>2. Measurement:&nbsp;&nbsp;</b></h5>
+				 </div>
+			  </div>
+  		</div>
+ </div>
+ 
+ 
+ 
+ <!------------------------------------------------------------- MEASUREMENTS OF SELECTED PATIENT TABLE START ----------------------------------------------------------- -->
+    	
+    	<th:block th:replace="modules/measurementsModule :: measurementsModule"> </th:block>
+    	
+<!------------------------------------------------------------- MEASUREMENTS OF SELECTED PATIENT TABLE END ----------------------------------------------------------- -->
+
+
+<!------------------------------------------------------------- CREATE MEASUREMENT MODULE START ----------------------------------------------------------- -->
+    	
+    	<!-- <th:block th:replace="nadmodals/createPatientMeasurementModal :: createPatientMeasurementModal"> </th:block> -->
+    	
+<!------------------------------------------------------------- CREATE MEASUREMENT MODULE  END ----------------------------------------------------------- -->
+	
+	
+<!------------------------------------------------------------- EDIT MEASUREMENT MODULE  START ----------------------------------------------------------- -->
+    	
+    	<th:block th:replace="nadmodals/editPatientMeasurementModal :: editPatientMeasurementModal"> </th:block>
+    	
+<!------------------------------------------------------------- EDIT MEASUREMENT MODULE  START ----------------------------------------------------------- -->
+		
+
+
+
+		
+		
+ </div>
+<!--  ---------------------------------------------------- MEASUREMENT TAB END ------------------------------------------------- -->
+
+</html>

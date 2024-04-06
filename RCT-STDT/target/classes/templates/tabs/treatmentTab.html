@@ -1,0 +1,35 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<!--  ---------------------------------------------------- TREATMENT TAB START ------------------------------------------------- -->
+<div th:fragment="treatment">
+	<div class="row">
+			<div class="col-12">
+			<div class"card">
+				<div class="card-body">
+				       <h5><b>3. Treatment:&nbsp;&nbsp;</b></h5>
+				 </div>
+			  </div>
+  		</div>
+ 	</div>
+	 
+	 <!------------------------------------------------------------- TREATMENTS OF SELECTED PATIENT TABLE START ----------------------------------------------------------- -->
+		 
+		 <th:block th:replace="modules/treatmentsModule :: treatmentsModule"> </th:block>
+		
+	<!------------------------------------------------------------- TREATMENTS OF SELECTED PATIENT TABLE START ----------------------------------------------------------- -->
+		
+	 
+	<!-- ------------------------------------------------------- UPDATE PATIENT TREATMENT RECORD MODAL START ------------------------------------------------------  -->
+		
+		<th:block th:replace="nadmodals/editPatientTmtModal :: editPatientTmtModal"> </th:block>				
+	
+	<!-- ------------------------------------------------------- UPDATE PATIENT TREATMENT RECORD MODAL END ------------------------------------------------------  -->
+
+	 
+	 
+</div>
+<!--  ---------------------------------------------------- TREATMENT TAB END ------------------------------------------------- -->
+
+
+
+</html>

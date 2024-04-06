@@ -1,0 +1,77 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<!-- --------------------------------------------- EDIT/UPDATE NAD CLINIC RECORD MODAL VIEW START ---------------------------------------------  -->
+ <div th:fragment="editNadKngClinicModal">
+	 
+	 
+ 		<div class="modal fade"  id="editNadKngClinicModal" >
+        <div class="modal-dialog modal-lg" style="width:70%">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Edit Clinic Record</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+           <form th:action="@{/sysConfigKngClinics/update}" method="put">
+            <div class="modal-body">
+	              <div class="row">
+	                      
+	                    <div class="col-sm-6">
+	                      <!-- text input -->
+	                     <div class="form-group" hidden>
+	                        <label>Id:</label>
+	                        <input type="number" class="form-control" id="idEdit" readonly>
+	                      </div>
+	                      
+	                      <div class="form-group">
+	                        <label>Clinic Id:</label>
+	                        <input type="text" class="form-control" id="clinicidEdit" required>
+	                      </div>
+	                      
+	                    </div>
+	                 	 <div class="col-sm-6">
+		              		  <div class="form-group">
+		                        <label>Clinic Name En:</label>
+		                        <input type="text" class="form-control" id="cnameEdit" required>
+		                      </div>
+	                	</div>   
+	              </div>
+	              	<div class="row">
+		              		<div class="col-sm-6">
+			              		  <div class="form-group">
+			                        <label>Clinic Name Ar:</label>
+			                        <input type="text" class="form-control" id="cnameaEdit" required>
+			                      </div>
+		                	</div>   
+		                	<div class="col-sm-6">
+			              		  <div class="form-group">
+			                        <label>Status:</label>
+			                         <select class="form-control" id="statEdit" required>
+			        	       			<option>-- Select Status --</option>			    					  					    					    
+					          			<option value="Y" selected>Active</option>
+	 						 			 <option value="N">Inactive</option>
+	 					    			</select>	
+			                      </div>
+		                	</div>   	
+		             	 </div>
+	             </div>
+	              <div class="modal-footer">
+	               		<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>&nbsp&nbsp
+			              <button th:href="@{/sysConfigKngClinics/deleteById/(id=)}" type="button" data-toggle="modal" class="btn btn-danger" data-target="#deleteModal" id="deleteButton">Delete</button>&nbsp&nbsp
+			              <button type="submit" class="btn btn-primary">Update</button>    
+			       </div>        
+            </form>
+              </div>           
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+
+
+      
+</div>
+ <!-- --------------------------------------------- EDIT/UPDATE NAD CLINIC RECORD MODAL VIEW END  ---------------------------------------------  -->
+ 
+ 
+ </html>

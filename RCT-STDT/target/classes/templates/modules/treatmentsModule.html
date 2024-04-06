@@ -1,0 +1,112 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<!-- --------------------------------------------- TREATMENT HTML DATA TABLE START --------------------------------------------- -->
+<div th:fragment="treatmentsModule">
+
+
+
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+
+            <div class="card">
+             <div class="card-header">
+                <h3 class="card-title">Treatment Record</h3>
+              </div>
+          
+              <!-- /.card-header -->
+              <div class="card-body">
+                <table id="nadPatientTreatmentsTable" class="table table-bordered table">
+                  <thead class="thead-custom">
+                  <tr>
+                    <th>Treatment ID</th>
+                    <th>Meal Plan ID</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>Status</th>
+                    <th>T.Energy</th>
+                    <th>BMI</th>
+                    <th>BF</th>
+                    <th>BMR</th>
+                    <th>IW</th>
+                  </tr>
+                  </thead>
+                  <tbody id="patientTreatmentsContainer">
+					
+                  </tbody>
+                  
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.container-fluid -->
+    </section>
+   
+ 
+    
+</div>    
+
+<!-- --------------------------------------------- TREATMENT HTML DATA TABLE END --------------------------------------------- -->
+
+<!-- ------------------------------------------- TREATMENT RECORD by PID START ----------------------------------------------------------- -->
+
+
+<div th:fragment="treatmentRecordByPid">
+
+	<tr th:each="f:${nadPatTmtList}">  
+						  <td >
+							  <a class="editPatientTmtButton">
+							  	<i class="fas fa-search"></i>&nbsp;<span th:text="${f.id}"></span>
+							  </a>
+						  </td>
+						  <td th:text="${f.id}"></td>
+						  <td th:text="${f.tplSdate}"></td>
+						  <td th:text="${f.tplEdate}"></td>
+						  <td th:text="${f.stat}"></td>
+						  <td th:text="${f.ten}"></td>
+						  <td th:text="${f.bmi}"></td>
+						  <td th:text="${f.bf}"></td>
+						  <td th:text="${f.bmr}"></td>
+						  <td th:text="${f.iw}"></td>
+	</tr>
+	 
+</div>	 
+
+<!-- ------------------------------------------- TREATMENT RECORD by PID END ----------------------------------------------------------- -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html>
+	
+	
+	
+	
+	
+	
+	
+	
+	

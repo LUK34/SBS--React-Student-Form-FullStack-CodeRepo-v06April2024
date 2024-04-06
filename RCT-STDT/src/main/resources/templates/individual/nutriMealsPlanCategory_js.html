@@ -1,0 +1,51 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+<script type="text/javascript">
+
+ 
+ //----------------------------- KNG NAD Meal Plan Category Lens button click START----------------------------------
+
+ $('document').ready(function()
+{
+	 //$('table #editButton').on('click',function(event)
+			 $(document).on('click', 'table .editButton', function(event)
+			   {
+			        event.preventDefault();
+			        var href= $(this).attr('href');
+			        $.get(href, function(mpc,status)
+						{
+			       			$('#Edit').val(mpc.id);
+			        		$('#Edit').val(mpc.fcode);
+			        		$('#Edit').val(mpc.mpctype);
+			       			$('#Edit').val(mpc.portions);
+			       			$('#Edit').val(mpc.measurement);
+			        		$('#Edit').val(mpc.calories);
+			        		$('#Edit').val(mpc.carbohydrates);
+			        		$('#Edit').val(mpc.fat);
+			        		$('#Edit').val(mpc.protein);  	
+			        		$('#Edit').val(mpc.fiber); 
+			        		$('#Edit').val(mpc.sodium); 
+			        		$('#Edit').val(mpc.stat);
+			        	}
+					);
+			        $('#editModal').modal();
+			    }); 
+});
+//----------------------------- KNG NAD Meal Plan Category Lens button click END----------------------------------
+ 
+//----------------------------- KNG NAD Meal Plan Category  Lens->Delete button START----------------------------------
+
+$('button #deleteButton').on('click',function(event)
+	{
+    		event.preventDefault();
+    		var href=$(this).attr('href');
+			 $('#confirmDeleteButton').attr('href',href);
+    		$('#deleteModal').modal();
+	});	
+
+//----------------------------- KNG NAD Meal Plan Category  Lens->Delete button START----------------------------------
+
+</script>
+
+</html>

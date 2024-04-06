@@ -1,0 +1,160 @@
+<html xmlns:th="http://www.thymeleaf.org"> 
+	
+<!----------------------------------- EDIT MEAL PLAN TEMPLATE MODAL START ---------------------------------------------------->
+<div th:fragment="editMPTModal">
+		
+		
+		
+		<div class="modal fade" id="editMPTModal">
+        <div class="modal-dialog modal-xl">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Edit Meals Template</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <form th:action="@{/nutriMealsPlanTemplate/findById}" method="put">
+		            <div class="modal-body">
+		               <div class="row">
+			                      
+			                    <div class="col-sm-6">
+			                    	<div class="form-group">
+				                        <label>Favourite Template Name:</label>
+				                        <input type="text" class="form-control"  required>
+				                      </div>
+			                	</div>
+			                	<div class="col-sm-6">
+			                		<div class="form-group">
+				                        <label>Category:</label>
+				                        <select class="form-control" required>
+				        	       			<option>-- Select Status --</option>			    					  					    					    
+						          			<option value="Y" selected>Active</option>
+		 						 			 <option value="N">Inactive</option>
+		 					    			</select>	
+				                      </div>
+			                	</div>            	
+			                </div>
+			                
+			                <div class="row">
+			                      
+			                    <div class="col-sm-4">
+			                    	<div class="form-group">
+				                        <label>To Publish:</label>
+				                        <select class="form-control" required>
+				        	       			<option>-- Select Status --</option>			    					  					    					    
+						          			<option value="Y" selected>Enable</option>
+		 						 			 <option value="N">disable</option>
+		 					    			</select>	
+				                      </div>
+			                	</div>
+			                	<div class="col-sm-4">
+			                		<div class="form-group">
+				                        <label>Number of Days:</label>
+				                        <input type="text" class="form-control"  required>
+				                      </div>
+			                	</div>   
+			                	 <div class="col-sm-4">
+			                		<div class="form-group">
+				                        <label>To be Available:</label>
+				                        <select class="form-control" required>
+				        	       			<option>-- Select Status --</option>			    					  					    					    
+						          			<option value="Y" selected>Enable</option>
+		 						 			 <option value="N">disable</option>
+		 					    			</select>
+				                      </div>
+			                	</div>  
+			                	        	
+			                </div>
+			                
+			              <div class="row">
+			                      
+			                    <div class="col-sm-4">
+			                    	<div class="form-group">
+				                        <label>Energy:</label>
+				                        <input type="text" class="form-control"  required>
+				                      </div>
+			                	</div>
+			                	<div class="col-sm-4">
+			                		<div class="form-group">
+				                        <label>Fat(g):</label>
+				                        <input type="text" class="form-control"  required>
+				                      </div>
+			                	</div>   
+			                	 <div class="col-sm-4">
+			                		<div class="form-group">
+				                        <label>Protein:</label>
+				                         <input type="text" class="form-control"  required>
+				                      </div>
+			                	</div>  
+			                	        	
+			                </div>
+			             
+			              <div class="row">
+			                      
+			                    <div class="col-sm-4">
+			                    	<div class="form-group">
+				                        <label>Carbohydrates(g):</label>
+				                        <input type="text" class="form-control"  required>
+				                      </div>
+			                	</div>
+			                	<div class="col-sm-4">
+			                		<div class="form-group">
+				                        <label>Fibre(g):</label>
+				                        <input type="text" class="form-control"  required>
+				                      </div>
+			                	</div>   
+			                	 <div class="col-sm-4">
+			                		<div class="form-group">
+				                        <label>Sodium(g):</label>
+				                         <input type="text" class="form-control"  required>
+				                      </div>
+			                	</div>  
+			                	        	
+			                </div>   
+			              
+			              <div class="row">
+			                      
+			                    <div class="col-sm-6">
+			                    	<div class="form-group">
+				                        <label>Objectives:</label>
+				                         <textarea class="form-control" id="" placeholder="" rows="3"></textarea> 
+				                      </div>
+			                	</div>
+			                	<div class="col-sm-6">
+			                		<div class="form-group">
+				                        <label>How to achieve:</label>
+				                         <textarea class="form-control" id="" placeholder="" rows="3"></textarea> 
+				                      </div>
+			                	</div>                  	        	
+			              </div>   
+			                                
+		            </div>
+		            <div class="modal-footer">
+					              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					              <button type="button" class="btn btn-danger">Delete</button>
+					              <button type="button" class="btn btn-primary">Clone Meal Plan</button>
+ 					              <button type="button" class="btn btn-primary">Print Meal Plan&nbsp;&nbsp;<i class="nav-icon fa fa-print"></i></button>
+					              <button type="button" class="btn btn-primary">One Page Meal Plan&nbsp;&nbsp;<i class="nav-icon fa fa-pie-chart"></i></button>
+					              <button type="submit" class="btn btn-primary">Apply changes</button>
+		            </div>
+          </form>
+            
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+      <!-- /.modal -->
+		
+		
+
+</div>		
+<!----------------------------------- EDIT MEAL PLAN TEMPLATE MODAL END ---------------------------------------------------->	
+		
+	
+	
+	
+	
+	
+</html>

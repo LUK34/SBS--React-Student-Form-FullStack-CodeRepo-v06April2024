@@ -1,0 +1,138 @@
+<html xmlns:th="http://www.thymeleaf.org"> 
+
+<!-- --------------------------------------------- ADD NAD KNG DATABASE RECORD MODAL VIEW START ---------------------------------------------  -->
+<div th:fragment="createKNGFoodModal">
+
+
+
+
+ 	<div class="modal fade"  id="createKNGFoodModal" >
+        <div class="modal-dialog modal-lg" style="width:70%">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Add Food record to KNG Food Database</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <!-- enter here -->
+              <form th:action="@{/nutriKNGFoodDatabase/addNew}" method="post">
+	              <div class="row">
+	                    <div class="col-sm-6">	                      
+	                      <div class="form-group">
+	                        <label>Fcode:</label>
+	                        <input type="number" class="form-control" required>
+	                      </div>   
+	                    </div>
+	                 	 <div class="col-sm-6">
+		              		  <div class="form-group">
+		                        <label>Food Name:</label>
+		                        <input type="text" class="form-control"  required>
+		                      </div>
+	                	</div>   
+	              </div>
+	              <div class="row">
+	              		<div class="col-sm-6">
+		              		  <div class="form-group">
+		                        <label>Food Type:</label>
+		                        <input type="text" class="form-control"  required>
+		                      </div>
+	                	</div>   
+	                	<div class="col-sm-6">
+		              		  <div class="form-group">
+		                        <label>Portions:</label>
+		                        <input type="text" class="form-control"  required>
+		                      </div>
+	                	</div>   	
+	              </div>
+	              <div class="row">
+	              		<div class="col-sm-6">
+		              		  <div class="form-group">
+		                        <label>Measurement:</label>
+		                        <input type="text" class="form-control"  required>
+		                      </div>
+	                	</div>   
+	                	<div class="col-sm-6">
+		              		  <div class="form-group">
+		                        <label>Status:</label>
+		                        <select class="form-control" id="statEdit"  required>
+					      				<option>-- Select  Status --</option>
+				          				<option value="Y" selected>New</option>
+ 						  				<option value="N">In-active</option>
+ 						  				<option value="">Existing</option>
+  					   			 </select>
+		                        <!--<input type="text" class="form-control"  required>-->
+		                        <!--<div class="form-check">
+  									<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="Y">
+  									<label for="exampleRadios1">New</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  									<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="N">
+  									<label for="exampleRadios2">In-Active</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  									<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="">
+  									<label for="exampleRadios3">Existing</label>
+								</div>-->
+		                      </div>
+	                	</div>   	
+	              </div>
+	              
+	              <div class="row">
+	              		<div class="col-sm-4">
+		              		  <div class="form-group">
+		                        <label>Calories(Kcal):</label>
+		                        <input type="text" class="form-control"  required>
+		                      </div>
+	                	</div>   
+	                	<div class="col-sm-4">
+		              		  <div class="form-group">
+		                        <label>Carbohydrates(g):</label>
+		                        <input type="text" class="form-control"  required>
+		                      </div>
+	                	</div> 
+	                	<div class="col-sm-4">
+		              		  <div class="form-group">
+		                        <label>Fat(g):</label>
+		                        <input type="text" class="form-control"  required>
+		                      </div>
+	                	</div>  	  	
+	              </div>
+	              
+	              <div class="row">
+	              		<div class="col-sm-4">
+		              		  <div class="form-group">
+		                        <label>Protein(g):</label>
+		                        <input type="text" class="form-control"  required>
+		                      </div>
+	                	</div>   
+	                	<div class="col-sm-4">
+		              		  <div class="form-group">
+		                        <label>Fiber(g):</label>
+		                        <input type="text" class="form-control"  required>
+		                      </div>
+	                	</div> 
+	                	<div class="col-sm-4">
+		              		  <div class="form-group">
+		                        <label>Sodium(g):</label>
+		                        <input type="text" class="form-control"  required>
+		                      </div>
+	                	</div>  	  	
+	              </div>
+	              <div class="modal-footer">
+	               		<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>&nbsp&nbsp
+			              <button type="button" class="btn btn-primary">Create</button>    
+			       </div>        
+            </form>
+              </div>           
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div> 	
+ 	
+
+
+
+</div>	
+<!-- --------------------------------------------- ADD NAD KNG DATABASE RECORD MODAL VIEW END ---------------------------------------------  -->
+ 	
+
+</html>

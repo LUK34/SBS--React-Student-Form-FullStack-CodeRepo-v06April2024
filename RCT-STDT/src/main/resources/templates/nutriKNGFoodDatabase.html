@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{corelayout}">
+<head>
+<title>KNG Food Database</title>
+</head>
+<body class="hold-transition  sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
+
+	<div layout:fragment="content">
+	
+			<!-- Content Header (Page header) -->
+		<div class="content-header">
+			<div class="container-fluid">
+				<div class="row mb-2">
+					<div class="col-sm-6">
+						<h1 class="m-0">KNG Food Database</h1>
+						
+					</div>
+					<!-- /.col -->
+					<div class="col-sm-6">
+						<ol class="breadcrumb float-sm-right">
+							<li class="breadcrumb-item"><a href="#">Nutritionists</a></li>
+							<li class="breadcrumb-item active"><a href="./nutriKNGFoodDatabase">KNG Food Database</a></li>
+						</ol>
+					</div>
+					<!-- /.col -->
+				</div>
+				<!-- /.row -->
+			</div>
+			<!-- /.container-fluid -->
+		</div>
+		<!-- /.content-header -->
+		
+		
+		  <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+
+            <div class="card">
+             <div class="card-header">
+                <h3 class="card-title">KNG Food Database: &nbsp; &nbsp;
+					 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createKNGFoodModal" >Add Food Data</button>
+				</h3>
+              </div>
+             
+              <div class="card-body">
+                <table id="example1" class="table table-bordered table">
+                  <thead class="thead-custom">
+                  <tr>
+					<th>#</th>
+                    <th>Fcode</th>
+                    <th>Foodname</th>
+                    <th>Foodtype</th>
+                    <th>Portions</th>
+                    <th>Measurement</th>
+                    <th>Calories(Kcal)</th>
+                    <th>Carbohydrates(g)</th>
+                    <th>Fat(g)</th>
+                    <th>Protein(g)</th>
+                    <th>Fiber(g)</th>
+                    <th>Sodium(g)</th>
+                    <th>Status</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+					  <tr th:each="f:${nadKngFoodDbList}">
+						  <td><a th:href="@{/nutriKNGFoodDatabase/findById/(id=${f.id})}" class="btn btn-primary editButton"> <i class="nav-icon fa fa-search"></i> </a></td>
+						  <td th:text="${f.fcode}"></td>
+						  <td th:text="${f.foodname}"></td>
+						  <td th:text="${f.foodtype}"></td>
+						  <td th:text="${f.portions}"></td>
+						  <td th:text="${f.measurement}"></td>
+						  <td th:text="${f.calories}"></td>
+						  <td th:text="${f.carbohydrates}"></td>
+						  <td th:text="${f.fat}"></td>
+						  <td th:text="${f.protein}"></td>
+						  <td th:text="${f.fiber}"></td>
+						  <td th:text="${f.sodium}"></td>
+						  <td th:text="${f.stat}"></td>
+					 </tr>
+                  </tbody>
+                  
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.container-fluid -->
+    </section>
+    
+    
+     <!-- --------------------------------------------- ADD NAD KNG DATABASE RECORD MODAL VIEW START ---------------------------------------------  -->
+ 		
+ 		
+ 		<th:block th:replace="nadmodals/createKNGFoodModal :: createKNGFoodModal"></th:block>
+ 		
+ 		
+	<!-- --------------------------------------------- ADD NAD KNG DATABASE RECORD MODAL VIEW END ---------------------------------------------  -->
+ 	
+     <!-- --------------------------------------------- EDIT/UPDATE NAD KNG DATABASE RECORD MODAL VIEW START ---------------------------------------------  -->
+ 	
+ 	
+ 		<th:block th:replace="nadmodals/editKNGFoodModal :: editKNGFoodModal"></th:block>
+ 		
+ 			
+	<!-- --------------------------------------------- EDIT/UPDATE NAD KNG DATABASE RECORD MODAL VIEW END ---------------------------------------------  -->
+ 	
+    
+	</div>
+</body>
+<th:block layout:fragment="script">
+	<!-- <div th:replace="individual/nutriKNGFoodDatabase_js"></div> -->
+	
+	
+	<script src="./admin/custom/nadjs/nutriKNGFoodDatabase.js"></script>
+	
+	
+	
+</th:block>
+</html>

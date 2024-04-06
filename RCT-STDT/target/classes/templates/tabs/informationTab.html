@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<!--  ---------------------------------------------------- INFORMATION TAB START ------------------------------------------------- -->
+<div class="row">
+			<div class="col-12">
+			<div class"card">
+				<div class="card-body">
+				       <h5><b>1. Information:&nbsp;&nbsp;</b></h5>
+				 </div>
+			  </div>
+  		</div>
+ </div>
+ 
+ 
+	 <div class="card-body">
+		 <!-- ROW1 START -->
+	 	<div class="row">
+	 		<div class="col-md-6">
+	 			<div class="container-fluid">
+        			<div class="row"> 
+          				<!-- /.col -->
+          				<div class="col-sm-12">
+           				 <div class="card card-primary">
+              			<div class="card-body p-0">
+               			 <!-- THE CALENDAR -->
+                			<div id="calendar" class="my-calendar"></div>
+             			 </div>
+              				<!-- /.card-body -->
+            			</div>
+           				 <!-- /.card -->
+         			 </div>
+          			<!-- /.col -->
+        			</div>
+       				 <!-- /.row -->
+      			</div><!-- /.container-fluid -->
+	 	</div>
+	 		<div class="col-md-6">
+		 		<div class="card">
+		                    <div class="card-header">
+			                    		<h5><b>Personal and Social History:</b>&nbsp;&nbsp;<a  class="btn btn-primary editPSHButton">Update&nbsp;&nbsp;<i class="fas fa-pencil-alt"></i></a></h5>
+		                    </div>
+		                    <div class="card-body">
+		                    </div>
+		        </div>
+		      </div> 
+	 	</div>
+	 	<!-- ROW1 END -->
+	 	
+	 	
+	 	<div class="row">
+		 	 
+		     <div class="col-md-6">
+	                  <div class="card">
+	                    	<div class="card-header">
+	                    			<h5><b>Dietary History:&nbsp;&nbsp;</b><a  class="btn btn-primary editDHButton">Update&nbsp;&nbsp;<i class="fas fa-pencil-alt"></i></a></h5>
+	                        </div>
+	                    	<div class="card-body">
+	                    	</div>
+	                   </div>
+	          </div> 
+	          <div class="col-md-6">
+	                   <div class="card">
+	                    	<div class="card-header">
+	                    			<h5><b>Other Recommendations:</b>&nbsp;&nbsp;<a  class="btn btn-primary editORButton">Update&nbsp;&nbsp;<i class="fas fa-pencil-alt"></i></a></h5>
+	                    	</div>
+	                    	<div class="card-body">
+	                    	</div>
+	                    </div>
+	          </div>
+	 	</div>
+	 	
+	 	<div class="row">
+	 		
+	        <div class="col-md-6">
+	                    <div class="card">
+	                    		<div class="card-header">
+	                    			<h5><b>Foods to avoid:</b>&nbsp;&nbsp;<a  class="btn btn-primary editORButton">Update&nbsp;&nbsp;<i class="fas fa-pencil-alt"></i></a></h5>
+	                    		</div>
+	                    		<div class="card-body">
+	                    		</div>
+	                    </div>
+	         </div>   
+	         <div class="col-md-6">
+	                   <div class="card">
+	                    	<div class="card-header">
+	                    			<h5><b>Water to Drink:</b>&nbsp;&nbsp;<a  class="btn btn-primary editORButton">Update&nbsp;&nbsp;<i class="fas fa-pencil-alt"></i></a></h5>
+	                    	</div>
+	                    	<div class="card-body">
+	                    	</div>
+	                    </div>
+	          </div>
+	           
+	 	</div>
+	 	
+	
+	 </div>
+	          
+
+<!--  ---------------------------------------------------- INFORMATION TAB END ------------------------------------------------- -->
+
+
+<!--  ---------------------------------------------------- PERSONAL AND SOCIAL HISTORY MODAL START ------------------------------------------------- -->
+
+
+  <div class="modal fade" id="editPSHModal">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Personal and Social History</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+           <form th:action="@{/sysConfigKngClinics/addNew}" method="post">
+            <div class="modal-body">
+              	<div class="row">
+					  <div class="col-sm-6">
+						 <div class="form-group">
+	                        <label>1.Bowel Movements:</label>
+	                         <select class="form-control" required>
+		        	       			<option>-- Select Status --</option>			    					  					    					    
+				          			<option value="Y" selected>Active</option>
+ 						 			 <option value="N">Inactive</option>
+ 					    			</select>
+	                      </div>
+					 </div>
+					 
+					 <div class="col-sm-6">
+						 <div class="form-group">
+	                        <label>2.Sleep Quality:</label>
+	                          <select class="form-control" required>
+		        	       			<option>-- Select Status --</option>			    					  					    					    
+				          			<option value="Y" selected>Active</option>
+ 						 			 <option value="N">Inactive</option>
+ 					    	  </select>
+	                      </div>
+					 </div>
+				 </div>
+				 
+				 <div class="row">
+					  <div class="col-sm-6">
+						 <div class="form-group">
+	                        <label>3.Smoker:</label>
+	                         <select class="form-control" required>
+		        	       			<option>-- Select Status --</option>			    					  					    					    
+				          			<option value="Y" selected>Active</option>
+ 						 			 <option value="N">Inactive</option>
+ 					    			</select>
+	                      </div>
+					 </div>
+					 
+					 <div class="col-sm-6">
+						 <div class="form-group">
+	                        <label>4.Alchol Consumption:</label>
+	                          <select class="form-control" required>
+		        	       			<option>-- Select Status --</option>			    					  					    					    
+				          			<option value="Y" selected>Active</option>
+ 						 			 <option value="N">Inactive</option>
+ 					    	  </select>
+	                      </div>
+					 </div>
+				 </div>
+				 
+				 <div class="row">
+					  <div class="col-sm-12">
+						 <div class="form-group">
+	                        <label>5.Marital Status:</label>
+	                         <select class="form-control" required>
+		        	       			<option>-- Select Status --</option>			    					  					    					    
+				          			<option value="Y" selected>Active</option>
+ 						 			 <option value="N">Inactive</option>
+ 					    			</select>
+	                      </div>
+					 </div>
+				</div>	
+				
+				<div class="row">
+					 <div class="col-sm-12">
+						 <div class="form-group">
+	                        <label>6.Physical Activity:</label>
+	                          <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Enter Details" rows="3"></textarea>
+	                      </div>
+					 </div>
+				 </div>
+				 
+				 
+				 <div class="row">
+					 <div class="col-sm-12">
+						 <div class="form-group">
+	                        <label>7.Race:</label>
+	                          <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Enter Details" rows="3"></textarea>
+	                      </div>
+					 </div>
+				 </div>
+				 
+				 
+				 <div class="row">
+					 <div class="col-sm-12">
+						 <div class="form-group">
+	                        <label>8.Other Information:</label>
+	                          <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Enter Details" rows="3"></textarea>
+	                      </div>
+					 </div>
+				 </div>
+	 
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save</button>
+            </div>
+            </form>
+        
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+<!--  ---------------------------------------------------- PERSONAL AND SOCIAL HISTORY MODAL END ------------------------------------------------- -->
+
+
+
+
+<!--  ---------------------------------------------------- DIETARY HISTORY MODAL START ------------------------------------------------- -->
+
+
+  <div class="modal fade" id="editDHModal">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Dietary History</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+           <form th:action="@{/sysConfigKngClinics/addNew}" method="post">
+            <div class="modal-body">
+              	<div class="row">
+					  <div class="col-sm-6">
+						 <div class="form-group">
+	                        <label>1.Usual Wake up time:</label>
+	                          <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Enter Details" rows="3"></textarea>
+	                      </div>
+					 </div>
+					 
+					 <div class="col-sm-6">
+						 <div class="form-group">
+	                        <label>2.Usual Bed time:</label>
+	                           <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Enter Details" rows="3"></textarea>
+	                      </div>
+					 </div>
+				 </div>
+				 
+				 <div class="row">
+					  <div class="col-sm-6">
+						 <div class="form-group">
+	                        <label>3.Types of Diet:</label>
+	                         <select class="form-control" required>
+		        	       			<option>-- Select Status --</option>			    					  					    					    
+				          			<option value="Y" selected>Active</option>
+ 						 			 <option value="N">Inactive</option>
+ 					    			</select>
+	                      </div>
+					 </div>
+					 
+					 <div class="col-sm-6">
+						 <div class="form-group">
+	                        <label>4.Favourite Food:</label>
+	                          <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Enter Details" rows="3"></textarea>
+	                      </div>
+					 </div>
+				 </div>
+				 
+				 <div class="row">
+					  <div class="col-sm-6">
+						 <div class="form-group">
+	                        <label>5.Dislike Food:</label>
+	                          <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Enter Details" rows="3"></textarea>
+	                      </div>
+					 </div>
+			
+					 <div class="col-sm-6">
+						 <div class="form-group">
+	                        <label>6.Allergies:</label>
+	                          <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Enter Details" rows="3"></textarea>
+	                      </div>
+					 </div>
+				 </div>
+				 
+				 
+				 <div class="row">
+					 <div class="col-sm-6">
+						 <div class="form-group">
+	                        <label>7.Food Intolerances:</label>
+	                          <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Enter Details" rows="3"></textarea>
+	                      </div>
+					 </div>
+				
+					 <div class="col-sm-6">
+						 <div class="form-group">
+	                        <label>8.Nutritional Deficencies:</label>
+	                          <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Enter Details" rows="3"></textarea>
+	                      </div>
+					 </div>
+				 </div>
+	 			
+	 			 <div class="row">
+					 <div class="col-sm-6">
+						 <div class="form-group">
+	                        <label>9. Water Intake:</label>
+	                          <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Enter Details" rows="3"></textarea>
+	                      </div>
+					 </div>
+				
+					 <div class="col-sm-6">
+						 <div class="form-group">
+	                        <label>10.Other Informations:</label>
+	                          <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Enter Details" rows="3"></textarea>
+	                      </div>
+					 </div>
+				 </div>
+	 			
+	 			
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save</button>
+            </div>
+            </form>
+        
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+<!--  ---------------------------------------------------- DIETARY HISTORY MODAL END ------------------------------------------------- -->
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

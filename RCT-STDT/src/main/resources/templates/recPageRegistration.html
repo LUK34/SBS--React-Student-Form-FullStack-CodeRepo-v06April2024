@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{corelayout}">
+<head>
+<title>Reception</title>
+</head>
+<body class="hold-transition  sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
+
+	<div layout:fragment="content">
+	
+			<!-- Content Header (Page header) -->
+		<div class="content-header">
+			<div class="container-fluid">
+				<div class="row mb-2">
+					<div class="col-sm-6">
+						<h1 class="m-0">Page Registration</h1>
+						
+					</div>
+					<!-- /.col -->
+					<div class="col-sm-6">
+						<ol class="breadcrumb float-sm-right">
+							<li class="breadcrumb-item"><a href="#">Reception</a></li>
+							<li class="breadcrumb-item active"><a href="./recPageRegistration">Page Registration</a></li>
+						</ol>
+					</div>
+					<!-- /.col -->
+				</div>
+				<!-- /.row -->
+			</div>
+			<!-- /.container-fluid -->
+		</div>
+		<!-- /.content-header -->
+		
+		<!------------------------------------------------------------- NAD ACTIVE PATIENTS TABLE START ----------------------------------------------------------- -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+
+            <div class="card">
+             <div class="card-header">
+                <h3 class="card-title">
+                NAD Active Patients: <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createManualModal" >Add New Patient(Manual)&nbsp;&nbsp;<i class="nav-icon fa fa-print"></i></button>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createAutoModal" >Add New Patients(Auto)</button>
+                </h3>
+              </div>
+          
+              
+              <!-- /.card-header -->
+              <div class="card-body">
+                <table id="nadPatientTable" class="table table-bordered table">
+                  <thead class="thead-custom">
+                  <tr>
+					<th>Treatment</th>
+                    <th>File No.</th>
+                    <th>Military ID</th>
+                    <th>Civil ID</th>
+                    <th>Name(E)</th>
+                    <th>Name(A)</th>
+                    <th>Date of Birth</th>
+                    <th>Gender</th>
+                    <th>Rank</th>
+                    <th>Mobile</th>
+                    <th>Unit</th>
+                    <th>Nationality</th>
+                    <th>Status</th>
+                  </tr>
+                  </thead>
+                  <tbody>  
+					<tr th:each="f:${nadpatientList}" th:data-patientid="${f.id}" class="patient-row">  
+						  <td><a th:href="@{/recPageRegistration/findById/(id=${f.id})}" id="editTreatmentButton" data-target="#editTreatmentModal">+Treatment</a></td>
+						  <td th:text="${f.id}"></td>
+						  <td th:text="${f.mid}"></td>
+						  <td th:text="${f.civilid}"></td>
+						  <td th:text="${f.name}"></td>
+						  <td th:text="${f.nameA}"></td>
+						  <td th:text="${f.dob}"></td>
+						  <td th:text="${f.gender}"></td>
+						  <td th:text="${f.rank}"></td>
+						  <td th:text="${f.mobile}"></td>
+						  <td th:text="${f.unit}"></td>
+						  <td th:text="${f.nationality}"></td>
+						  <td th:text="${f.stat}"></td>
+					 </tr>
+                  </tbody>
+                  
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.container-fluid -->
+    </section>
+		<!---------------------------------------------------------------- NAD ACTIVE PATIENTS TABLE END ------------------------------------------------------------------ -->
+		
+		<!------------------------------------------------------------- TREATMENTS OF SELECTED PATIENT TABLE START ----------------------------------------------------------- -->
+		  
+		 <th:block th:replace="modules/treatmentsModule :: treatmentsModule"> </th:block>
+		
+		<!------------------------------------------------------------- TREATMENTS OF SELECTED PATIENT TABLE START ----------------------------------------------------------- -->
+		
+	
+	<!------------------------------------------------------------- MEASUREMENTS OF SELECTED PATIENT TABLE START ----------------------------------------------------------- -->
+    	
+    	<th:block th:replace="modules/measurementsModule :: measurementsModule"> </th:block>
+    	
+	<!------------------------------------------------------------- MEASUREMENTS OF SELECTED PATIENT TABLE START ----------------------------------------------------------- -->
+				
+		
+	<!-- --------------------------------------------- ADD PATIENT TREATMENT RECORD MODAL VIEW START ---------------------------------------------  -->
+ 		
+		<th:block th:replace="nadmodals/createPatientTmtModal :: createPatientTmtModal"> </th:block>
+	
+	<!-- --------------------------------------------- ADD PATIENT TREATMENT RECORD MODAL VIEW END ---------------------------------------------  -->
+
+
+	<!-- ------------------------------------------------------- UPDATE PATIENT TREATMENT RECORD MODAL START ------------------------------------------------------  -->
+		
+		<th:block th:replace="nadmodals/editPatientTmtModal :: editPatientTmtModal"> </th:block>				
+	
+	<!-- ------------------------------------------------------- UPDATE PATIENT TREATMENT RECORD MODAL END ------------------------------------------------------  -->
+
+	
+	<!-- ------------------------------------------------------- ADD PATIENT MEASUREMENT RECORD MODAL START ------------------------------------------------------  -->
+		
+		<th:block th:replace="nadmodals/createPatientMeasurementModal :: createPatientMeasurementModal"> </th:block>
+	
+	<!-- ------------------------------------------------------- ADD PATIENT MEASUREMENT RECORD MODAL END ------------------------------------------------------  -->
+	
+	
+	<!-- ------------------------------------------------------- UPDATE PATIENT MEASUREMENT RECORD MODAL START ------------------------------------------------------  -->
+		
+		<th:block th:replace="nadmodals/editPatientMeasurementModal :: editPatientMeasurementModal"> </th:block>
+	
+	<!-- ------------------------------------------------------- UPDATE PATIENT MEASUREMENT RECORD MODAL END ------------------------------------------------------  -->
+	
+	
+	<!-- --------------------------------------------- ADD PATIENT RECORD(AUTO) MODAL VIEW START ---------------------------------------------  -->
+ 	
+ 		<th:block th:replace="nadmodals/createAutoModal :: createAutoModal"> </th:block>
+ 	
+	<!-- --------------------------------------------- ADD PATIENT RECORD(AUTO) MODAL VIEW END ---------------------------------------------  -->
+ 		
+
+	</div>
+</body>
+<th:block layout:fragment="script">
+
+		
+	
+		<script src="./admin/custom/nadjs/recpageRegistration.js"></script>
+		<script src="./admin/custom/nadjs/treatment.js"></script>
+		<script src="./admin/custom/nadjs/measurement.js"></script>
+		
+		
+		
+</th:block>
+</html>

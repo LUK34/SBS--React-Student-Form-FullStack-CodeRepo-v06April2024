@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{corelayout}">
+<head>
+<title>One Page Meal Plan Template</title>
+</head>
+<body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
+
+	<div layout:fragment="content">
+	
+			<!-- Content Header (Page header) -->
+		<div class="content-header">
+			<div class="container-fluid">
+				<div class="row mb-2">
+					<div class="col-sm-6">
+						<h1 class="m-0">One Page Meal Plan Template</h1>
+						
+					</div>
+					<!-- /.col -->
+					<div class="col-sm-6">
+						<ol class="breadcrumb float-sm-right">
+							<li class="breadcrumb-item"><a href="#">System Configuration</a></li>
+							<li class="breadcrumb-item active"><a href="./sysConfigOnePageMPT">One Page Meal Plan Template</a></li>
+						</ol>
+					</div>
+					<!-- /.col -->
+				</div>
+				<!-- /.row -->
+			</div>
+			<!-- /.container-fluid -->
+		</div>
+		<!-- /.content-header -->
+		
+			 <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+
+            <div class="card">
+             <div class="card-header">
+                <h3 class="card-title">
+					One Page Meal Plan Template: &nbsp; &nbsp;
+					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createOnePageMPTModal" >Create</button>
+				</h3>
+              </div>
+               
+              <div class="card-body">
+                <table id="example1" class="table table-bordered table">
+                 <thead class="thead-custom">
+                  <tr>
+					<th>#</th>
+                    <th>Template ID</th>
+                    <th>Days</th>
+                    <th>Breakfast</th>
+                    <th>Snacks(Morning)</th>
+                    <th>Lunch</th>
+                    <th>Snacks(Evening))</th>
+                    <th>Dinner</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+					 <tr th:each="f:${nadRepMplanList}">
+						  <td><a th:href="@{/sysConfigOnePageMPT/findById/(id=${f.id})}" class="btn btn-primary editButton"> <i class="nav-icon fa fa-search"></i> </a></td>
+						  <td th:text="${f.tid}"></td>
+						  <td th:text="${f.days}"></td>
+						  <td th:text="${f.breakfast}"></td>
+						  <td th:text="${f.snack1}"></td>
+						  <td th:text="${f.lunch}"></td>
+						  <td th:text="${f.snack2}"></td>
+						  <td th:text="${f.dinner}"></td>
+					 </tr>
+                  </tbody>
+                  
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.container-fluid -->
+    </section>
+		
+	 <!-- --------------------------------------------- CREATE NAD ONE PAGE MEAL PLAN TEMPLATE START ---------------------------------------------  -->
+ 		
+ 		<th:block th:replace="nadmodals/createOnePageMPTModal :: createOnePageMPTModal"></th:block>
+	
+	<!-- --------------------------------------------- CREATE NAD ONE PAGE MEAL PLAN TEMPLATE END ---------------------------------------------  -->
+ 	
+ 	 <!-- --------------------------------------------- EDIT NAD ONE PAGE MEAL PLAN TEMPLATE START ---------------------------------------------  -->
+ 		
+ 		<th:block th:replace="nadmodals/editOnePageMPTModal :: editOnePageMPTModal"></th:block>
+	
+	<!-- --------------------------------------------- EDIT NAD ONE PAGE MEAL PLAN TEMPLATE END ---------------------------------------------  -->
+ 		
+	<!-- --------------------------------------------- DELETE NAD RECORD MODAL VIEW START  ---------------------------------------------  -->
+ 		
+ 		<th:block th:replace="nadmodals/deleteModal :: deleteModal"></th:block>
+ 	
+ 	<!-- --------------------------------------------- DELETE NAD RECORD MODAL VIEW END  ---------------------------------------------  -->
+ 	
+		
+	</div>
+</body>
+<th:block layout:fragment="script">
+	
+	<script src="./admin/custom/nadjs/sysConfigOnePageMPT.js"></script>
+	
+</th:block>
+</html>

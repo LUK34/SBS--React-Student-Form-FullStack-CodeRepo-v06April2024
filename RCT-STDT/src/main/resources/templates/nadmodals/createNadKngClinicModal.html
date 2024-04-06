@@ -1,0 +1,70 @@
+<html xmlns:th="http://www.thymeleaf.org">
+		
+<!-- --------------------------------------------- CREATE NAD CLINIC RECORD MODAL VIEW START ---------------------------------------------  -->
+<div th:fragment="createNadKngClinicModal">
+	
+ 	<div class="modal fade"  id="createNadKngClinicModal" >
+        <div class="modal-dialog modal-lg" style="width:70%">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Create Clinic Record</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <!-- enter here -->
+              <form th:action="@{/sysConfigKngClinics/addNew}" method="post">
+	              <div class="row">
+	                      
+	                    <div class="col-sm-6">
+	                      <!-- text input -->
+	                      
+	                      <div class="form-group">
+	                        <label>Clinic Id:</label>
+	                        <input type="number" class="form-control" required>
+	                      </div>
+	                      
+	                    </div>
+	                 	 <div class="col-sm-6">
+		              		  <div class="form-group">
+		                        <label>Clinic Name En:</label>
+		                        <input type="text" class="form-control"  required>
+		                      </div>
+	                	</div>   
+	              </div>
+	              <div class="row">
+	              		<div class="col-sm-6">
+		              		  <div class="form-group">
+		                        <label>Clinic Name Ar:</label>
+		                        <input type="text" class="form-control"  required>
+		                      </div>
+	                	</div>   
+	                	<div class="col-sm-6">
+		              		  <div class="form-group">
+		                        <label>Status:</label>
+		                         <select class="form-control" required>
+		        	       			<option>-- Select Status --</option>			    					  					    					    
+				          			<option value="Y" selected>Active</option>
+ 						 			 <option value="N">Inactive</option>
+ 					    			</select>	
+		                      </div>
+	                	</div>   	
+	              </div>
+	              <div class="modal-footer">
+	               		<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>&nbsp&nbsp
+			              <button type="submit" class="btn btn-primary">Create</button>    
+			       </div>        
+            </form>
+              </div>           
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+      
+      
+</div>    
+<!-- --------------------------------------------- CREATE NAD CLINIC RECORD MODAL VIEW END ---------------------------------------------  -->
+ 	
+</html>

@@ -1,0 +1,74 @@
+<html xmlns:th="http://www.thymeleaf.org"> 
+
+<!-- --------------------------------------------- EDIT/UPDATE NAD LIST OF DIAGNOSIS RECORD MODAL VIEW START ---------------------------------------------  -->
+<div th:fragment="editListOfDiagnosisModal">
+	
+	 
+ 	<div class="modal fade"  id="editListOfDiagnosisModal" >
+        <div class="modal-dialog modal-lg" style="width:70%">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Edit Diagnosis Record</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <!-- enter here -->
+              <form th:action="@{/sysConfigListOfDiagnosis/update}" method="put">
+	              <div class="row">    
+	                    <div class="col-sm-12" hidden>
+		                      <!-- text input -->
+		                     <div class="form-group" hidden>
+		                        <label>Id:</label>
+		                        <input type="number" class="form-control" id="idEdit" readonly>
+		                      </div>  
+		                   </div>
+		                   <div class="col-sm-12">
+		                      <div class="form-group">
+		                        <label>Diagnosis:</label>
+		                        <input type="text" class="form-control" id="diagEdit" required>
+		                      </div>
+	                      </div>
+	                 </div> 
+	                 <div class="row"> 
+	                 	 <div class="col-sm-12">
+		              		  <div class="form-group">
+		                        <label>Diagnosis(A):</label>
+		                        <input type="text" class="form-control" id="diagaEdit" required>
+		                      </div>
+	                	</div>  
+	               </div> 
+	              <div class="row">
+	              	
+	                	<div class="col-sm-12">
+		              		  <div class="form-group">
+		                        <label>Status:</label>
+		                         <select class="form-control" id="statEdit" required>
+		        	       			<option>-- Select Status --</option>			    					  					    					    
+				          			<option value="Y" selected>Active</option>
+ 						 			 <option value="N">Inactive</option>
+ 					    		</select>	
+		                      </div>
+	                	</div>   	
+	              </div>
+	              <div class="modal-footer">
+	               		<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>&nbsp&nbsp
+			              <button th:href="@{/sysConfigListOfDiagnosis/deleteById/(id=)}" type="button" data-toggle="modal" class="btn btn-danger" data-target="#deleteModal" id="deleteButton">Delete</button>&nbsp&nbsp
+			              <button type="button" class="btn btn-primary">Update</button>    
+			       </div>        
+            </form>
+              </div>           
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+  
+  
+      
+</div>      
+ <!-- --------------------------------------------- EDIT/UPDATE NAD LIST OF DIAGNOSIS RECORD MODAL VIEW END ---------------------------------------------  -->
+ 
+
+</html>
